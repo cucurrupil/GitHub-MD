@@ -68,6 +68,14 @@
 
 `env`  --> look at your environment
 
+`history | less`  --> To view the history one page at a time
+
+`history | tail`  --> To view the last ten commands
+
+`history 25`  --> To view the last 25 commands
+
+`history | grep -i searchTerm | less`  --> Look for the usage of an specific command through the history
+
 `ls`  --> List all the directories and files in the current directory
 
 `touch newFile.txt`  --> Create a new file (linux)
