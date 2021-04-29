@@ -179,3 +179,25 @@ The **commit** must have a message
 
 `git push -u [remote] [branch]`  --> Push local branch to **remote** repository. Set its copy as an upstream
 
+
+**Another useful commands**
+
+
+`-rm -rf fileName`  --> Delete directories
+
+`../`  --> Go up one folder
+
+`find .-name "\*.txt"`  --> Used to find files (with any name) with a specific file format
+
+`-grep "wordToFind" fileWhereYouAreSearching.txt`  --> Look for a specific word into a file
+
+`wc fileName.txt`  --> Show number of words, bytes and lines of such file
+
+`nano fileName.md`  --> Nano open the text editor. If **fileName.md** is included the text editor will open the new file with that name and file format
+
+
+
+
+
+
+
