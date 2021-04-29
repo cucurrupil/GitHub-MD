@@ -27,27 +27,24 @@ Local repo: Local copy of the upstream repo
 Provides a central repository. You use git locally on your own system to create and update code, share your changes with your team, and see your team's changes by using git commands to push, fetch, and merge work.
 
 
-![Here is an image that shows the things you can do in git](https://cloud.scorm.com/content/courses/0IMC8377IU/39946ed0-8919-427f-90a4-8b494234f51e/0/git-lab-certified-associate-bundle-self-study-exams-scorm2004_4-dq4hjTgo/scormcontent/assets/-r1hKgv28Zv5KcKg_AHC8RwSXHKHpaqwp.jpg)
 
+`cd NAME-OF-DIRECTORY` --> Go into a directory to work in it
 
+`cd ..`  --> Go back one directory
 
-`cd NAME-OF-DIRECTORY` Go into a directory to work in it
+`ls`  --> List what is in the current directory
 
-`cd ..`Go back one directory
+`ls a*`  --> List what is the the current directory that starts with `a`
 
-`ls`List what is in the current directory
+`ls *.md`  --> List what is in the current directory that ends with `.md`
 
-`ls a*`  List what is the the current directory that starts with `a`
+`mkdir NAME-OF-YOUR-DIRECTORY` --> Create a new directory
 
-`ls *.md`  List what is in the current directory that ends with `.md`
+`cat README.md`  --> Display the contents of a text file you created previously
 
-`mkdir NAME-OF-YOUR-DIRECTORY`  Create a new directory
+`pwd`  --> Show the current directory
 
-`cat README.md` Display the contents of a text file you created previously
-
-`pwd`  Show the current directory
-
-`clear`  Clear the shell window
+`clear`  --> Clear the shell window
 
 
 
@@ -55,24 +52,61 @@ Provides a central repository. You use git locally on your own system to create 
 
 
 
-**Log in (setting a name and email)**
+**Git configuration**
 
-`git config -global user.name "xxxx"` in xxxx goes your name
+`git config -global user.name "xxxx"` --> Into xxxx goes your name
 
-`git config -global user.name "emailAdress"`
-
-
-**Initializate a directory as a git repository**
-
-`git init` Initializate with it
-
-`git clone www.heregoesthelinkoftherepository.com`  Clone the files of a repository
+`git config -global user.name "emailAddress"`  -->Into emailAddress goes your email
 
 
-**Add a file to the staging area**
+**Starting a project**
 
-`git add NameOfTheFile`
+`git init [projectName]`  --> Create a new repository, if projectName is provided, Git will create a new directory name and will initialize a repository inside it. If the project name is not provided, then a new repository is initialized in the current directory
 
+`git clone [project url]`  --> Download a project with the entire history from the remote repository.
+
+
+**Daily life commands**
+
+`git status`  --> Display the status of your working directory. Options include new, staged, and modified files. It will retrieve branch name, current commit identifier, and changes pending commit.
+
+`git add [file]`  --> Add a file to the *staging* area. Use in place of the full file path to add all changed files from the *current directory* down into the *directory tree*
+
+`git diff [file]` --> Show changes between *working directory* and *staging area*
+
+`git diff --staged [file]`  --> Shows any change between the *staging area*and the *repository*
+
+`git checkout -- [file]`  --> Discard changes in *working directory*. This operation is *unrecoverable*
+
+`git reset [file]`  --> Revert your *repository* to a previous know working state
+
+`git commit`  --> Create a new *commit* from changes added to the *staging area*.  
+The *commit* must have a message
+
+`git rm [file]`  --> Remove file from *working directory* and *staging area*
+
+`git stash`  --> Put current changes in your *working directory* into *stash* for later use
+
+`git stash pop`  --> Apply stored *stash* from all your previous *stashes*
+
+`git stash drop`  --> Delete a specific *stash* from all your previous *stashes*
+
+
+**Git branching model**
+
+`git branch [-a]`  --> List all local branches in repository. With -a: show all branches (with remote)
+
+`git branch [branchName]`  --> Create a new branch, referencing the current *HEAD*
+
+`git checkout [-b][branchName]`  --> Switch *working directory* to the specified branch. With -b
+
+`git merge [fromName]`  --> Join specified fromName branch into your current branch (the one you are on currently)
+
+`git branch -d [name]`  --> Remove selected branch, if it is already merged into any other.  
+*-D* instead of *-d* forces deletion
+
+
+**Review your work**
 
 
 
