@@ -27,7 +27,7 @@ Local repo: Local copy of the upstream repo
 Provides a central repository. You use git locally on your own system to create and update code, share your changes with your team, and see your team's changes by using git commands to push, fetch, and merge work.
 
 
-![alt text](shorturl.at/ruyO8)
+![Here is an image that shows the things you can do in git](https://bit.ly/33b1hLT)
 
 
 
