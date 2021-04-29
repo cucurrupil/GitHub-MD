@@ -4,23 +4,28 @@ Git. It is a free and open source distributed version control system(VCS) design
 
 I will give some basic definitions used in git:
 
-Branch: A branch is an independent line of development
+**Branch**: A branch is an independent line of development
 
-Tag: Mark a specific point in time on a branch
+**Tag**: Mark a specific point in time on a branch
 
-Checkout: Get a specific branch to start making your changes 
+**Checkout**: Get a specific branch to start making your changes 
 
-Commit: Add changes you have made to the repository
+**Commit**: Add changes you have made to the repository
 
-Push: Send changes to a remote directory
+**Push**: Send changes to a remote directory
 
-Workspace: Directory where you store the repository on your computer
+**Workspace**: Directory where you store the repository on your computer
 
-Working Area: Files that have been modified but not committed
+**Working Area**: Files that have been modified but not committed
 
-Staging Area: Modified/added files that are marked to go into the next commit
+**Staging Area**: Modified/added files that are marked to go into the next commit
 
-Local repo: Local copy of the upstream repo
+**Local repo**: Local copy of the upstream repo
+  
+  
+  
+  
+  
 
 **Basic git workflow with gitlab**
 
@@ -45,19 +50,22 @@ Provides a central repository. You use git locally on your own system to create 
 `pwd`  --> Show the current directory
 
 `clear`  --> Clear the shell window
-
-
-
-
-
-
-
+  
+  
+  
+  
+  
 **Git configuration**
 
 `git config -global user.name "xxxx"` --> Into xxxx goes your name
 
 `git config -global user.name "emailAddress"`  -->Into emailAddress goes your email
 
+  
+  
+  
+  
+  
 
 **Starting a project**
 
@@ -65,7 +73,11 @@ Provides a central repository. You use git locally on your own system to create 
 
 `git clone [project url]`  --> Download a project with the entire history from the remote repository.
 
-
+  
+  
+  
+  
+  
 **Daily life commands**
 
 `git status`  --> Display the status of your working directory. Options include new, staged, and modified files. It will retrieve branch name, current commit identifier, and changes pending commit.
@@ -78,20 +90,24 @@ Provides a central repository. You use git locally on your own system to create 
 
 `git checkout -- [file]`  --> Discard changes in *working directory*. This operation is *unrecoverable*
 
-`git reset [file]`  --> Revert your *repository* to a previous know working state
+`git reset [file]`  --> Revert your **repository** to a previous know working state
 
-`git commit`  --> Create a new *commit* from changes added to the *staging area*.  
-The *commit* must have a message
+`git commit`  --> Create a new **commit** from changes added to the **staging area**.  
+The **commit** must have a message
 
-`git rm [file]`  --> Remove file from *working directory* and *staging area*
+`git rm [file]`  --> Remove file from *working directory* and **staging area**
 
 `git stash`  --> Put current changes in your *working directory* into *stash* for later use
 
-`git stash pop`  --> Apply stored *stash* from all your previous *stashes*
+`git stash pop`  --> Apply stored **stash** from all your previous *stashes*
 
-`git stash drop`  --> Delete a specific *stash* from all your previous *stashes*
+`git stash drop`  --> Delete a specific **stash** from all your previous *stashes*
 
-
+  
+  
+  
+  
+  
 **Git branching model**
 
 `git branch [-a]`  --> List all local branches in repository. With -a: show all branches (with remote)
@@ -107,34 +123,59 @@ The *commit* must have a message
 
 
 **Review your work**
+  
+  
+  
+  
+  
+`git log [-n count]`  --> List commit history of current branch, **-n count** limits list to last **n** commits
 
+`git log --oneline --graph -- decorate`  --> An overview with reference labels and history graph. One commit per line
 
+`git log ref..`  --> List commits that are prensent on the current branch and not merged into **ref** . A **ref** can be a branch name or a tag name
 
-**Save your changes in the file**
+`git log ..ref`  --> List commit that are present on **ref** and not merged into current branch
 
-`git commit -m "NameOfChange"` Record your changes permanently
+`git reflog` --> List operations (like checkouts or commits) made on local repository
+  
+  
+  
+  
+  
+**Tagging known commits**
 
-`git commit -a` This command commits any files you have added with the git add command
+`git tag`  --> List all tags
 
+`git tag [name] [commit sha]`  --> Create a tag reference named **name** for current commit. Add **commit sha** to tag a specific commit instead of current one
 
-**See the differences of the not staged files**
+`git tag -a [name] [commit sha]`  --> Create a tag object named **name** for current commit
 
-`git diff` This command shows the differences which are not yet staged
+`git tag -d [name]`  --> Remove a tag from local repository
+  
+  
+  
+  
+  
+**Reverting changes**
 
+`git reset [--hard] [target reference]`  --> Switches the current branch to the **target reference,** leaving a difference as an uncommitted change. When **--hard** is used, all changes are discarded
 
-**Show all the commitments you have done**
+`git revert [commit sha]`  --> Create a new commit, reverting changes from the specified commit. It generates an **inversion** of changes
 
-`git status` This command lists all the files that have to be commited
+  
+  
+  
+  
+  
+**Synchronizing repositories**
 
+`git fetch [remote]`  --> Fetch changes from the **remote,** but not update tracking branches
 
-**See the version history of the current branch**
+`git fetch --prune [remote]`  --> Delete remote Refs that were removed from the **remote** repository
 
-`git log`  This command is used to list the version history for the current branch
+`git pull [remote]`  --> Fetch changes from the **remote** and merge current branch with its upstream
 
+`git push [--tags] [remote]`  --> Push local changes to the **remote.** Use **tags** to push tags
 
-**Send the committed changes to your remot repository**
-
-`git push` This command sends the committed changes of master branch to your remote repository
-
-
+`git push -u [remote] [branch]`  --> Push local branch to **remote** repository. Set its copy as an upstream
 
