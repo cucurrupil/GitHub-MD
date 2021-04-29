@@ -1,4 +1,4 @@
-## **GIT BASH COMMANDS**
+###### **GIT BASH COMMANDS**
 
 Git. It is a free and open source distributed version control system(VCS) designed to handle everything
 
@@ -22,7 +22,14 @@ Staging Area: Modified/added files that are marked to go into the next commit
 
 Local repo: Local copy of the upstream repo
 
-**Basic commands of bash**
+**Basic git workflow with gitlab**
+
+Provides a central repository. You use git locally on your own system to create and update code, share your changes with your team, and see your team's changes by using git commands to push, fetch, and merge work.
+
+
+![alt text](shorturl.at/ruyO8)
+
+
 
 `cd NAME-OF-DIRECTORY` Go into a directory to work in it
 
@@ -41,6 +48,7 @@ Local repo: Local copy of the upstream repo
 `pwd`  Show the current directory
 
 `clear`  Clear the shell window
+
 
 
 
